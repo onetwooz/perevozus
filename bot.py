@@ -10,7 +10,7 @@ bot = telebot.TeleBot(config.token)
 @bot.message_handler(commands=["start"])
 def start(message):
 	#bot.send_message(message.chat.id, 'Hello. \n\n Write /help fro help.')
-	bot.send_message(message.chat.id, 'Hello')
+	bot.send_message(message.chat.id, 'Добрый день! Я - Петр Доставкин, оператор службы доставки.  Что привело вас сегодня к нам?')
 
 #@bot.message_handler(commands=["help"])
 #def start(message):
