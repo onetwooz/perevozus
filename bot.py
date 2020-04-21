@@ -32,7 +32,8 @@ def messages(message):
 			pass
 	else:
 		bot.send_message(config.owner, str(message.chat.id) + ': ' + message.text)
-		bot.send_message(message.chat.id, '%s, wait please 👍'%message.chat.username)
+		#bot.send_message(message.chat.id, '%s, wait please 👍'%message.chat.username)
+		bot.send_message(message.chat.id, 'Йо, {0.first_name}!'.format(message.from_user, bot.get_me(), parse_mode="html"))
 
 if __name__ == '__main__':
 	bot.polling(none_stop = True)
