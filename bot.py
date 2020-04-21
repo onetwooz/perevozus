@@ -9,7 +9,7 @@ bot = telebot.TeleBot(config.token)
 	
 @bot.message_handler(commands=["start"])
 def start(message):
-	bot.send_message(message.chat.id, 'Добрый день! Я - Петр Доставкин, оператор службы доставки.  Что привело вас сегодня к нам?')
+	bot.send_message(message.chat.id, 'Добрый день! Я - {1.first_name}, оператор службы доставки.  Что привело вас сегодня к нам?')
 
     
 
