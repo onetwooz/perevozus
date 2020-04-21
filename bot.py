@@ -13,7 +13,7 @@ def start(message):
 	keyboard = types.InlineKeyboardMarkup()
     	callback_button = types.InlineKeyboardButton(text="Нажми меня", callback_data="test")
     	keyboard.add(callback_button)
-    	bot.send_message(message.chat.id, "Я – сообщение из обычного режима", reply_markup=keyboard)
+    
 
 #@bot.message_handler(commands=["help"])
 #def start(message):
