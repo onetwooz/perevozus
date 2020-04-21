@@ -9,12 +9,15 @@ bot = telebot.TeleBot(config.token)
 	
 @bot.message_handler(commands=["start"])
 def start(message):
-	#bot.send_message(message.chat.id, 'Hello. \n\n Write /help fro help.')
 	bot.send_message(message.chat.id, 'Добрый день! Я - Петр Доставкин, оператор службы доставки.  Что привело вас сегодня к нам?')
+	keyboard = types.InlineKeyboardMarkup()
+    	callback_button = types.InlineKeyboardButton(text="Нажми меня", callback_data="test")
+    	keyboard.add(callback_button)
+    	bot.send_message(message.chat.id, "Я – сообщение из обычного режима", reply_markup=keyboard)
 
 #@bot.message_handler(commands=["help"])
 #def start(message):
-	#bot.send_message(message.chat.id, 'Help message😈')
+	#bot.send_message(message.chat.id, 'Help')
 
 #message.from_user.id
 #message.from_user.first_name
