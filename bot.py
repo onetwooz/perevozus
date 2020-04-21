@@ -30,7 +30,7 @@ def messages(message):
 		except:
 			pass
 	else:
-		bot.send_message(config.owner, str(message.from_user.username) + ': ' + message.text)
+		bot.send_message(config.owner,'@' + str(message.from_user.username) + ': ' + message.text)
 		#bot.send_message(message.chat.id, '%s, wait please 👍'%message.chat.username)
 		bot.send_message(message.chat.id, 'Йо, {0.first_name}!'.format(message.from_user, bot.get_me(), parse_mode="html"))
 
