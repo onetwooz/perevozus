@@ -29,7 +29,7 @@ def messages(message):
 		try:
 			chatId=message.text.split(': ')[0]
 			text=message.text.split(': ')[1]
-			bot.send_message([chatId], text, parse_mode="Markdown" )
+			bot.send_message(`chatId`, text, parse_mode="Markdown" )
 		except:
 			pass
 	else:
