@@ -24,6 +24,7 @@ def start(message):
 
 @bot.message_handler(content_types=["text"])
 def messages(message):
+	usrid = HTML ( <b> str(message.from_user.username) </b> )
 	if int(message.chat.id) == int(config.owner):
 		try:
 			chatId=message.text.split(': ')[0]
@@ -32,7 +33,7 @@ def messages(message):
 		except:
 			pass
 	else:
-		bot.send_message(config.owner, '@' + str(message.from_user.username) + ' ' + str(message.from_user.id) + ': ' + message.text)
+		bot.send_message(config.owner, '@' + usrid + ' ' + str(message.from_user.id) + ': ' + message.text)
 		#bot.send_message(message.chat.id, '%s, wait please 👍'%message.chat.username)
 		bot.send_message(message.chat.id, 'Йо, {0.first_name}!'.format(message.from_user, bot.get_me(), parse_mode="html"))
 
