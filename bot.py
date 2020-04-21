@@ -9,7 +9,7 @@ bot = telebot.TeleBot(config.token)
 	
 @bot.message_handler(commands=["start"])
 def start(message):
-	bot.send_message(message.chat.id, 'Добрый день! Я - {1.first_name}, оператор службы доставки.  Что привело вас сегодня к нам?')
+	bot.send_message(message.chat.id, 'Добрый день! Я - {1.first_name}, оператор службы доставки.  Что привело вас сегодня к нам?'.format(message.from_user, bot.get_me(), parse_mode="html"))
 
     
 
@@ -29,11 +29,11 @@ def messages(message):
 		try:
 			chatId=message.text.split(': ')[0]
 			text=message.text.split(': ')[1]
-			bot.send_message(chatId, text)
+			bot.send_message([chatId], text, parse_mode="Markdown" )
 		except:
 			pass
 	else:
-		bot.send_message(config.owner, '@' + html(<b>message.from_user.username</b>) + ' ' + str(message.from_user.id) + ': ' + message.text)
+		bot.send_message(config.owner, '@' + html(message.from_user.username) + ' ' + str(message.from_user.id) + ': ' + message.text)
 		#bot.send_message(message.chat.id, '%s, wait please 👍'%message.chat.username)
 		bot.send_message(message.chat.id, 'Йо, {0.first_name}!'.format(message.from_user, bot.get_me(), parse_mode="html"))
 
