@@ -10,9 +10,9 @@ bot = telebot.TeleBot(config.token)
 @bot.message_handler(commands=["start"])
 def start(message):
 	bot.send_message(message.chat.id, 'Добрый день! Я - Петр Доставкин, оператор службы доставки.  Что привело вас сегодня к нам?')
-	keyboard = types.InlineKeyboardMarkup()
-    	callback_button = types.InlineKeyboardButton(text="Нажми меня", callback_data="test")
-    	keyboard.add(callback_button)
+		keyboard = types.InlineKeyboardMarkup()
+    		callback_button = types.InlineKeyboardButton(text="Нажми меня", callback_data="test")
+    		keyboard.add(callback_button)
     
 
 #@bot.message_handler(commands=["help"])
