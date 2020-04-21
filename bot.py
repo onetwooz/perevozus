@@ -15,11 +15,10 @@ def start(message):
 def start(message):
 	bot.send_message(message.chat.id, 'Help message😈')
 
-
-
-
-
-
+#message.from_user.id
+#message.from_user.first_name
+#message.from_user.last_name
+#message.from_user.username
 
 @bot.message_handler(content_types=["text"])
 def messages(message):
@@ -31,7 +30,7 @@ def messages(message):
 		except:
 			pass
 	else:
-		bot.send_message(config.owner, str(message.chat.id) + ': ' + message.text)
+		bot.send_message(config.owner, str(message.from_user.username) + ': ' + message.text)
 		#bot.send_message(message.chat.id, '%s, wait please 👍'%message.chat.username)
 		bot.send_message(message.chat.id, 'Йо, {0.first_name}!'.format(message.from_user, bot.get_me(), parse_mode="html"))
 
