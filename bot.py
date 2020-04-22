@@ -39,7 +39,7 @@ def get_name(message): #получаем фамилию
     bot.send_message(message.from_user.id, 'Номер телефона?');
     bot.register_next_step_handler(message, get_num);
 
-def get_age(message):
+def get_num(message):
     global num;
     while num == 0: #проверяем что возраст изменился
         try:
