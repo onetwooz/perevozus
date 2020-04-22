@@ -1,8 +1,8 @@
-import telebot;
+import telebot
 from telebot import types
+import os
+
 bot = telebot.TeleBot('1200662214:AAFkgwEx0M85O6dM_ebyfS3BpEe8eoxwbHQ');
-
-
 name = '';
 surname = '';
 age = 0;
@@ -46,5 +46,5 @@ def callback_worker(call):
         bot.send_message(call.message.chat.id, 'Запомню : )');
     elif call.data == "no":
          ... #переспрашиваем
-
-bot.polling(none_stop=True, interval=0)
+            
+bot.polling(none_stop = True)
