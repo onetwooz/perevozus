@@ -8,9 +8,9 @@ def start(message):
 bot.send_message(message.chat.id, 'Добрый день! Я - {1.first_name}, оператор службы доставки.  Что привело вас сегодня к нам?'.format(message.from_user, bot.get_me(), parse_mode="html"))
 
 
-name = '';
-surname = '';
-age = 0;
+#name = '';
+#surname = '';
+#age = 0;
 
 @bot.message_handler(content_types=['text'])
 def start(message):
