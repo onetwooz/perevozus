@@ -8,8 +8,8 @@ surname = '';
 age = 0;
 
 @bot.message_handler(commands=["start"])
-def start(message):
-    bot.send_message(message.from_user.id, "Как тебя зовут?");
+def start_message(message):
+    bot.send_message(message.chat.id, "Как тебя зовут?");
     bot.register_next_step_handler(message, get_name); #следующий шаг – функция get_name
 
 def get_name(message): #получаем фамилию
